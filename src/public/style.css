@@ -1,0 +1,16 @@
+body {
+  background-color: #343a40;
+  color: white;
+}
+
+a {
+  color: orange;
+  font-weight: bold;
+}
+a:hover {
+  color: olivedrab;
+  text-decoration: none;
+}
+.text-muted {
+  color: #0fafe9 !important;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pocket-News</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-fluid p-4">
+      <div class="row">
+        <div class="col"><h1 class="source">SWEN</h1></div>
+      </div>
+      <div class="row news"></div>
+    </div>
+    <script type="text/javascript">
+      const createFeed = data => {
+        for (let index = 0; index < data.news.length; index++) {
+          const n = data.news[index];
+
+          const title = document.querySelector('.source');
+          const container = document.querySelector('.container-fluid .news');
+          const col = document.createElement('div');
+          const card = document.createElement('div');
+          const cardHeader = document.createElement('div');
+          const cardBody = document.createElement('div');
+          const image = document.createElement('img');
+          const a = document.createElement('a');
+          const p = document.createElement('p');
+
+          title.textContent = data.source;
+
+          p.classList.add('card-text');
+          p.classList.add('text-muted');
+          col.classList.add('col-md-3');
+          card.classList.add('card');
+          card.classList.add('bg-secondary');
+          card.classList.add('mb-2');
+          cardHeader.classList.add('card-header');
+          cardBody.classList.add('card-body');
+          image.classList.add('img-fluid');
+
+          p.textContent = n.datePost;
+          a.href = n.link;
+          a.textContent = n.title;
+          a.target = '_blank';
+          image.src = n.img;
+          cardBody.textContent = n.prev;
+
+          cardHeader.appendChild(a);
+          cardHeader.appendChild(p);
+          cardBody.appendChild(image);
+          card.appendChild(cardHeader);
+          card.appendChild(cardBody);
+          col.appendChild(card);
+
+          container.appendChild(col);
+        }
+      };
+
+      /***
+       * Make the call to the back
+       * */
+      const callB = async () => {
+        await fetch('/news')
+          .then(resp => resp.json())
+          .then(res => {
+            createFeed(res.data);
+          });
+      };
+
+      callB();
+    </script>
+  </body>
+</html>
