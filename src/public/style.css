@@ -14,3 +14,6 @@ a:hover {
 .text-muted {
   color: #0fafe9 !important;
 }
+.removeSpinner {
+  display: none !important;
+}
