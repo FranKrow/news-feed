@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel='icon' href='nf.png' type='image/x-icon'/ >
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -15,53 +16,84 @@
   </head>
   <body>
     <div class="container-fluid p-4">
-      <div class="row">
-        <div class="col"><h1 class="source">SWEN</h1></div>
-      </div>
-      <div class="row news"></div>
+      <ul class="nav nav-tabs" id="feedsList" role="tablist"></ul>
+      <div class="tab-content" id="feedsContent"></div>
     </div>
     <script type="text/javascript">
       const createFeed = data => {
-        for (let index = 0; index < data.news.length; index++) {
-          const n = data.news[index];
+        const feedList = document.querySelector('#feedsList');
+        const feedContent = document.querySelector('#feedsContent');
 
-          const title = document.querySelector('.source');
-          const container = document.querySelector('.container-fluid .news');
-          const col = document.createElement('div');
-          const card = document.createElement('div');
-          const cardHeader = document.createElement('div');
-          const cardBody = document.createElement('div');
-          const image = document.createElement('img');
-          const a = document.createElement('a');
-          const p = document.createElement('p');
+        for (let index = 0; index < data.length; index++) {
+          const feed = data[index];
 
-          title.textContent = data.source;
+          // TAB HEADERS
+          const feedItem = document.createElement('li');
+          feedItem.classList.add('nav-item');
+          const feedItemLink = document.createElement('a');
+          feedItemLink.classList.add('nav-link');
+          if (index === 0) feedItemLink.classList.add('active');
+          feedItemLink.href = '#' + feed.source;
+          feedItemLink.setAttribute('role', 'tab');
+          feedItemLink.textContent = feed.source;
+          feedItemLink.setAttribute('data-toggle', 'tab');
 
-          p.classList.add('card-text');
-          p.classList.add('text-muted');
-          col.classList.add('col-md-3');
-          card.classList.add('card');
-          card.classList.add('bg-secondary');
-          card.classList.add('mb-2');
-          cardHeader.classList.add('card-header');
-          cardBody.classList.add('card-body');
-          image.classList.add('img-fluid');
+          feedItem.appendChild(feedItemLink);
+          feedList.appendChild(feedItem);
 
-          p.textContent = n.datePost;
-          a.href = n.link;
-          a.textContent = n.title;
-          a.target = '_blank';
-          image.src = n.img;
-          cardBody.textContent = n.prev;
+          // TAB CONTENT
+          const feedsNews = document.createElement('div');
+          feedsNews.classList.add('tab-pane');
+          feedsNews.classList.add('fade');
+          if (index === 0) {
+            feedsNews.classList.add('show');
+            feedsNews.classList.add('active');
+          }
+          feedsNews.id = feed.source;
+          feedsNews.role = 'tabpanel';
+          const feedsContainer = document.createElement('div');
+          feedsContainer.classList.add('row');
+          feedsContainer.setAttribute('role', 'tab');
+          for (let j = 0; j < feed.news.length; j++) {
+            const n = feed.news[j];
 
-          cardHeader.appendChild(a);
-          cardHeader.appendChild(p);
-          cardBody.appendChild(image);
-          card.appendChild(cardHeader);
-          card.appendChild(cardBody);
-          col.appendChild(card);
+            const col = document.createElement('div');
+            const card = document.createElement('div');
+            const cardHeader = document.createElement('div');
+            const cardBody = document.createElement('div');
+            const image = document.createElement('img');
+            const a = document.createElement('a');
+            const p = document.createElement('p');
 
-          container.appendChild(col);
+            p.classList.add('card-text');
+            p.classList.add('text-muted');
+            col.classList.add('col-md-3');
+            card.classList.add('card');
+            card.classList.add('bg-secondary');
+            card.classList.add('mb-2');
+            cardHeader.classList.add('card-header');
+            cardBody.classList.add('card-body');
+            image.classList.add('img-fluid');
+
+            p.textContent = n.datePost;
+            a.href = n.link;
+            a.textContent = n.title;
+            a.target = '_blank';
+            image.src = n.img;
+            cardBody.textContent = n.prev;
+
+            cardHeader.appendChild(a);
+            cardHeader.appendChild(p);
+            cardBody.appendChild(image);
+            card.appendChild(cardHeader);
+            card.appendChild(cardBody);
+            col.appendChild(card);
+
+            feedsContainer.appendChild(col);
+          }
+
+          feedsNews.appendChild(feedsContainer);
+          feedContent.appendChild(feedsNews);
         }
       };
 
@@ -78,5 +110,21 @@
 
       callB();
     </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
