@@ -13,6 +13,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container-fluid p-4">
@@ -59,39 +63,46 @@
           feedsNews.role = 'tabpanel';
           const feedsContainer = document.createElement('div');
           feedsContainer.classList.add('row');
+          feedsContainer.classList.add('feedsContainer');
           feedsContainer.setAttribute('role', 'tab');
           for (let j = 0; j < feed.news.length; j++) {
             const n = feed.news[j];
 
             const col = document.createElement('div');
             const card = document.createElement('div');
-            const cardHeader = document.createElement('div');
+            // const cardHeader = document.createElement('div');
             const cardBody = document.createElement('div');
             const image = document.createElement('img');
             const a = document.createElement('a');
             const p = document.createElement('p');
+            const pDate = document.createElement('p');
+            const small = document.createElement('small');
 
             p.classList.add('card-text');
-            p.classList.add('text-muted');
+            small.classList.add('text-muted');
             col.classList.add('col-md-3');
             card.classList.add('card');
-            card.classList.add('bg-secondary');
+            card.classList.add('bg-light');
             card.classList.add('mb-2');
-            cardHeader.classList.add('card-header');
+            // cardHeader.classList.add('card-header');
             cardBody.classList.add('card-body');
-            image.classList.add('img-fluid');
+            image.classList.add('card-img-top');
+            a.classList.add('card-title');
+            pDate.classList.add('card-text');
 
-            p.textContent = n.datePost;
+            p.textContent = n.prev;
+            small.textContent = n.datePost;
             a.href = n.link;
             a.textContent = n.title;
             a.target = '_blank';
             image.src = n.img;
-            cardBody.textContent = n.prev;
-
-            cardHeader.appendChild(a);
-            cardHeader.appendChild(p);
-            cardBody.appendChild(image);
-            card.appendChild(cardHeader);
+            // cardBody.textContent = n.prev;
+            pDate.appendChild(small);
+            cardBody.appendChild(a);
+            cardBody.appendChild(p);
+            cardBody.appendChild(pDate);
+            card.appendChild(image);
+            // card.appendChild(cardHeader);
             card.appendChild(cardBody);
             col.appendChild(card);
 
