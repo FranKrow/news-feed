@@ -84,11 +84,6 @@ const dataProvider = {
         (new Date() - new Date(datePost)) / (24 * 3600 * 1000)
       );
 
-      if (SOURCE.name == 'ASISUCEDE') {
-        console.log(SOURCE.name);
-        console.log({ title, prev, dateDiff, datePost });
-      }
-
       if (title && prev && (!datePost || dateDiff <= 1)) {
         let info = {
           title,

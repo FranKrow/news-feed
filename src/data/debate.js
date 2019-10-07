@@ -2,7 +2,7 @@ const baseDataProvider = require('./baseDataProvider');
 
 const SOURCE = {
   name: 'DEBATE',
-  url: 'https://www.debate.com.mx',
+  url: 'http://www.debate.com.mx',
   map: {
     addUrlToPath: true,
     container: '.col__main article',
