@@ -2,7 +2,7 @@ const baseDataProvider = require('./baseDataProvider');
 
 const SOURCE = {
   name: 'UNOCERO',
-  url: 'https://www.unocero.com',
+  url: 'http://www.unocero.com',
   map: {
     addUrlToPath: false,
     container: '.post',
