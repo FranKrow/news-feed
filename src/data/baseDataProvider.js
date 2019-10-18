@@ -84,7 +84,7 @@ const dataProvider = {
         (new Date() - new Date(datePost)) / (24 * 3600 * 1000)
       );
 
-      if (title && prev && (!datePost || dateDiff <= 1)) {
+      if (title && prev && (!datePost || dateDiff <= 2)) {
         let info = {
           title,
           prev,
