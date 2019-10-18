@@ -5,6 +5,7 @@ const SOURCE = {
   url: 'https://queretaro.quadratin.com.mx/',
   map: {
     addUrlToPath: false,
+    addUrlToIMG: false,
     container: '.main-slider .slider',
     title: { find: '.inside-title', attr: 'value' },
     prev: { find: '.inside-title', attr: 'value' },

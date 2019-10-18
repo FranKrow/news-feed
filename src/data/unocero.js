@@ -5,6 +5,7 @@ const SOURCE = {
   url: 'http://www.unocero.com',
   map: {
     addUrlToPath: false,
+    addUrlToIMG: false,
     container: '.post',
     title: { find: 'a.title' },
     prev: { find: '.excerpt' },

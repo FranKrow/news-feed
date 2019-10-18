@@ -63,7 +63,7 @@ const dataProvider = {
         : $(e)
             .find(SOURCE.map.datePost.find)
             .text();
-      const img = SOURCE.map.addUrlToPath
+      const img = SOURCE.map.addUrlToIMG
         ? SOURCE.url +
           (SOURCE.map.img.attr
             ? $(e)

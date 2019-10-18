@@ -5,6 +5,7 @@ const SOURCE = {
   url: 'http://asisucedegto.mx',
   map: {
     addUrlToPath: false,
+    addUrlToIMG: false,
     container: '.td-big-grid-post',
     title: { find: 'a', attr: 'title' },
     prev: { find: 'a', attr: 'title' },
