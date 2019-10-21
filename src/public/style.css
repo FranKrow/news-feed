@@ -1,11 +1,11 @@
 body {
-  background-color: white;
-  color: #000;
+  background-color: #202124;
+  color: #d3d6d9;
   font-family: 'Roboto', sans-serif;
 }
 
 a {
-  color: orange;
+  color: #e4e4e4;
   font-weight: bold;
 }
 a:hover {
@@ -13,7 +13,7 @@ a:hover {
   text-decoration: none;
 }
 .text-muted {
-  color: #0fafe9 !important;
+  color: #e8eacf !important;
 }
 .removeSpinner {
   display: none !important;
@@ -23,4 +23,23 @@ a:hover {
 }
 .feedsContainer {
   margin-top: 3px;
+}
+.bg-light {
+  background-color: #2d2e30 !important;
+}
+
+card {
+  border: 1px solid #5f6368;
+}
+.nav-item {
+  color: #d3d6d9;
+  background-color: #525356 !important;
+}
+
+.nav-link:hover {
+  color: #d3d6d9;
+}
+.card-body > p {
+  font-size: smaller;
+  margin-top: 5px;
 }
