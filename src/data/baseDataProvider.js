@@ -81,10 +81,10 @@ const dataProvider = {
             .text();
 
       const dateDiff = Math.round(
-        (new Date() - new Date(datePost)) / (24 * 3600 * 1000)
+        (Date() - Date(datePost)) / (24 * 3600 * 1000)
       );
 
-      if (title && prev && (!datePost || dateDiff <= 2)) {
+      if (title && prev) {
         let info = {
           title,
           prev,
