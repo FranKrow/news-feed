@@ -11,7 +11,7 @@ const SOURCE = {
     prev: { find: 'a', attr: 'title' },
     link: { find: 'a', attr: 'href' },
     datePost: { find: '.entry-date', attr: 'datetime' },
-    img: { find: 'img.entry-thumb', attr: 'src' }
+    img: { find: 'img.entry-thumb', attr: 'data-img-url' }
   }
 };
 
