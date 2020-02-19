@@ -14,7 +14,7 @@ const dataProvider = {
     const $ = cheerio.load(news.data);
 
     fs.writeFile(
-      __dirname + `/${SOURCE.name}.html`,
+      __dirname + `/pages/${SOURCE.name}.html`,
       $(SOURCE.map.container).html(),
       function(err) {
         if (err) {
