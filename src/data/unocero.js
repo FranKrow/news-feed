@@ -1,7 +1,7 @@
 const baseDataProvider = require('./baseDataProvider');
 
 const SOURCE = {
-  name: 'UNOCERO',
+  name: '1|0',
   url: 'http://www.unocero.com',
   map: {
     addUrlToPath: false,
