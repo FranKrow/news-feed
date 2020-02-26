@@ -52,6 +52,10 @@ const createFeed = data => {
       card.classList.add('card');
       card.classList.add('bg-light');
       card.classList.add('mb-2');
+      card.classList.add('img-hover-zoom');
+      card.addEventListener('click', () => {
+        window.open(n.link, '_blank');
+      });
       // cardHeader.classList.add('card-header');
       cardBody.classList.add('card-body');
       image.classList.add('card-img-top');

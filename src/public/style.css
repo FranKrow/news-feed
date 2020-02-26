@@ -19,7 +19,7 @@ a:hover {
   display: none !important;
 }
 .card-img-top {
-  padding: 2px;
+  border: 1px solid #25292b;
 }
 .feedsContainer {
   margin-top: 3px;
@@ -28,9 +28,6 @@ a:hover {
   background-color: #2d2e30 !important;
 }
 
-card {
-  border: 1px solid #5f6368;
-}
 .nav-item {
   color: #d3d6d9;
   background-color: #525356 !important;
@@ -39,7 +36,28 @@ card {
 .nav-link:hover {
   color: #d3d6d9;
 }
+
 .card-body > p {
   font-size: smaller;
   margin-top: 5px;
+}
+
+.card:hover {
+  border: 1px solid orange !important;
+  cursor: pointer;
+}
+
+/* [1] The container */
+.img-hover-zoom {
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
 }
