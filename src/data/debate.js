@@ -5,7 +5,7 @@ const SOURCE = {
   url: 'http://www.debate.com.mx',
   map: {
     addUrlToPath: true,
-    addUrlToIMG: true,
+    addUrlToIMG: false,
     container: '.row__container article',
     title: { find: '.news__title>a' },
     prev: { find: '.news__data a' },
