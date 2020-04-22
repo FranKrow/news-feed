@@ -1,4 +1,4 @@
-const createFeed = data => {
+const createFeed = (data) => {
   const feedList = document.querySelector('#feedsList');
   const feedContent = document.querySelector('#feedsContent');
 
@@ -91,11 +91,11 @@ const createFeed = data => {
  * */
 const callB = async () => {
   await fetch('/news')
-    .then(resp => resp.json())
-    .then(res => {
+    .then((resp) => resp.json())
+    .then((res) => {
       createFeed(res.data);
     })
-    .finally(function() {
+    .finally(function () {
       console.log('?');
       const spin = document.getElementById('spinner');
       spin.classList.add('removeSpinner');

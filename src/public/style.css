@@ -47,6 +47,10 @@ a:hover {
   cursor: pointer;
 }
 
+button {
+  margin: 2px;
+}
+
 /* [1] The container */
 .img-hover-zoom {
   overflow: hidden; /* [1.2] Hide the overflowing of child elements */

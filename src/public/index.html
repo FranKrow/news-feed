@@ -20,6 +20,26 @@
   </head>
   <body>
     <div class="container-fluid p-4">
+      <div class="d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="covidTotal"
+          title="Total Cases"
+        ></button>
+        <button
+          type="button"
+          class="btn btn-success"
+          id="covidRecovered"
+          title="Recovered Cases"
+        ></button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          id="covidDeaths"
+          title="Deaths"
+        ></button>
+      </div>
       <div class="d-flex justify-content-center hide" id="spinner">
         <div class="spinner-border" role="status">
           <span class="sr-only">Loading...</span>
@@ -30,6 +50,7 @@
       <div class="tab-content" id="feedsContent"></div>
     </div>
     <script src="init.js"></script>
+    <script src="covid.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
