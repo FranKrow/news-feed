@@ -7,18 +7,18 @@ const SOURCE = {
     addUrlToPath: true,
     addUrlToIMG: false,
     container: 'div.multimedia',
-    title: { find: '.field-content>a' },
+    title: { find: '.field-content>a img', attr: 'title' },
     prev: { find: '.field-content.slideinfos' },
     link: { find: '.field-content>a', attr: 'href' },
     datePost: { find: '.views-field-created>.field-content' },
-    img: { find: '.field-content>a img', attr: 'src' }
-  }
+    img: { find: '.field-content>a img', attr: 'data-src' },
+  },
 };
 
 const dataProvider = {
   getNews: async () => {
     return baseDataProvider.getNews(SOURCE);
-  }
+  },
 };
 
 module.exports = dataProvider;
