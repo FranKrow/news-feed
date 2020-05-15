@@ -11,7 +11,7 @@ const SOURCE = {
     prev: { find: '.field-content.slideinfos' },
     link: { find: '.field-content>a', attr: 'href' },
     datePost: { find: '.views-field-created>.field-content' },
-    img: { find: '.field-content>a img', attr: 'data-src' },
+    img: { find: '.field-content>a img', attr: 'src' },
   },
 };
 
