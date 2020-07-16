@@ -11,14 +11,14 @@ const SOURCE = {
     prev: { find: '.inside-title', attr: 'value' },
     link: { find: '.inside-link', attr: 'value' },
     datePost: { find: '.hour-hide' },
-    img: { find: '.wp-post-image', attr: 'src' }
-  }
+    img: { find: '.wp-post-image', attr: 'data-lazy-src' },
+  },
 };
 
 const dataProvider = {
   getNews: async () => {
     return baseDataProvider.getNews(SOURCE);
-  }
+  },
 };
 
 module.exports = dataProvider;

@@ -2,7 +2,7 @@ const baseDataProvider = require('./baseDataProvider');
 
 const SOURCE = {
   name: 'DEBATE',
-  url: 'http://www.debate.com.mx',
+  url: 'http://www.debate.com.mx/seccion/losmochis/',
   map: {
     addUrlToPath: true,
     addUrlToIMG: false,

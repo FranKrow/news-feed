@@ -6,19 +6,19 @@ const SOURCE = {
   map: {
     addUrlToPath: false,
     addUrlToIMG: false,
-    container: '.post',
-    title: { find: 'a.title' },
-    prev: { find: '.excerpt' },
-    link: { find: 'a.title', attr: 'href' },
-    datePost: { find: '.date' },
-    img: { find: '.image', attr: 'data-src' }
-  }
+    container: '.notas02',
+    title: { find: '.data h2' },
+    prev: { find: '.data h2' },
+    link: { find: '.image a', attr: 'href' },
+    datePost: { find: '.postDate' },
+    img: { find: '.bgImage ', attr: 'data-bg' },
+  },
 };
 
 const dataProvider = {
   getNews: async () => {
     return baseDataProvider.getNews(SOURCE);
-  }
+  },
 };
 
 module.exports = dataProvider;
