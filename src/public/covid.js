@@ -5,9 +5,18 @@ const getCovidInfo = async () => {
     .then((resp) => resp.json())
     .then((resp) => {
       let covidInfo = resp;
-      $('#covidTotal').html(`${covidInfo.cases} (+${covidInfo.todayCases})`);
-      $('#covidRecovered').html(covidInfo.recovered);
-      $('#covidDeaths').html(`${covidInfo.deaths} (+${covidInfo.todayDeaths})`);
+      nfObject = new Intl.NumberFormat('en-US');
+      $('#covidTotal').html(
+        `${nfObject.format(covidInfo.cases)} (+${nfObject.format(
+          covidInfo.todayCases
+        )})`
+      );
+      $('#covidRecovered').html(nfObject.format(covidInfo.recovered));
+      $('#covidDeaths').html(
+        `${nfObject.format(covidInfo.deaths)} (+${nfObject.format(
+          covidInfo.todayDeaths
+        )})`
+      );
       console.log('covidInfo', covidInfo);
     })
     .finally(() => {
