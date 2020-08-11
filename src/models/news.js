@@ -3,6 +3,7 @@ const debate = require('./../data/debate');
 const asisucede = require('./../data/asisucede');
 const quadratin = require('./../data/cuadratin');
 const universal = require('./../data/universal');
+const ligamx = require('./../data/ligamx');
 
 const Model = {
   getAll: async () => {
@@ -11,11 +12,12 @@ const Model = {
       debate.getNews(),
       asisucede.getNews(),
       quadratin.getNews(),
-      universal.getNews()
-    ]).then(function(values) {
+      universal.getNews(),
+      ligamx.getNews(),
+    ]).then(function (values) {
       return values;
     });
-  }
+  },
 };
 
 module.exports = Model;
