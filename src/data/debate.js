@@ -4,7 +4,7 @@ const SOURCE = {
   name: 'DEBATE',
   url: 'http://www.debate.com.mx/seccion/losmochis/',
   map: {
-    addUrlToPath: false,
+    addUrlToPath: true,
     addUrlToIMG: true,
     container: '.row__container article',
     title: { find: '.news__title>a' },
