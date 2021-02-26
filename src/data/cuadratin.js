@@ -11,7 +11,7 @@ const SOURCE = {
     prev: { find: '.inside-title', attr: 'value' },
     link: { find: '.inside-link', attr: 'value' },
     datePost: { find: '.hour-hide' },
-    img: { find: '.wp-post-image', attr: 'data-lazy-src' },
+    img: { find: '.wp-post-image', attr: 'data-src' },
   },
 };
 
