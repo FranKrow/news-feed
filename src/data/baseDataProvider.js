@@ -13,6 +13,10 @@ const dataProvider = {
 
     const $ = cheerio.load(news.data);
 
+    if (!fs.existsSync(__dirname + `/pages`)){
+        fs.mkdirSync(__dirname + `/pages`);
+    }
+    
     fs.writeFile(
       __dirname + `/pages/${SOURCE.name}.html`,
       $(SOURCE.map.container).html(),
