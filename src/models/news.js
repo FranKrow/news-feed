@@ -9,7 +9,7 @@ const Model = {
   getAll: async () => {
     return await Promise.all([
       unocero.getNews(),
-      debate.getNews(),
+      //debate.getNews(),
       asisucede.getNews(),
       quadratin.getNews(),
       //universal.getNews(),
