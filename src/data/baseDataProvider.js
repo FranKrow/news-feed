@@ -13,7 +13,6 @@ const dataProvider = {
 
     const $ = cheerio.load(news.data);
 
-    /*
     fs.writeFile(
       __dirname + `/pages/${SOURCE.name}.html`,
       $(SOURCE.map.container).html(),
@@ -24,8 +23,7 @@ const dataProvider = {
 
         // console.log('The file was saved!');
       }
-    );
-    */
+    );    
 
     $(SOURCE.map.container).each((i, e) => {
       const title = SOURCE.map.title.attr
