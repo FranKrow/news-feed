@@ -5,7 +5,7 @@ on:
 
 jobs:
   upgrade-version:
-    runs-on: ubuntu-latest:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: pocket-apps/action-update-version@v1
